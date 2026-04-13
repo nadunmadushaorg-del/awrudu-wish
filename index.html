@@ -28,9 +28,10 @@ body {
   width: 100%;
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  animation: fadeIn 1.5s ease-in-out;
 }
 
-/* TEXT OVERLAY */
+/* TEXT */
 .text {
   position: absolute;
   top: 55%;
@@ -44,21 +45,59 @@ body {
 }
 
 .text h1 {
-  font-size: 24px;
+  font-size: 22px;
+  animation: zoomIn 1.5s ease;
 }
 
 .text p {
   font-size: 14px;
   line-height: 1.5;
+  animation: fadeUp 2s ease;
+}
+
+/* SPARKLES */
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  animation: float 5s infinite;
+}
+
+.sparkle:nth-child(1) { top: 10%; left: 20%; }
+.sparkle:nth-child(2) { top: 30%; left: 70%; }
+.sparkle:nth-child(3) { top: 80%; left: 40%; }
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); }
+  to { transform: scale(1); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-15px); opacity: 0.5; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 /* MOBILE */
 @media (max-width: 480px) {
   .text h1 {
-    font-size: 20px;
+    font-size: 18px;
   }
   .text p {
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 </style>
@@ -68,8 +107,8 @@ body {
 
 <div class="container">
 
-  <!-- GOOGLE DRIVE IMAGE -->
-  <img src="https://github.com/nadunmadushaorg-del/awrudu-wish/blob/main/awrudu.png" class="poster">
+  <!-- GITHUB IMAGE -->
+  <img src="https://raw.githubusercontent.com/nadunmadushaorg-del/awrudu-wish/main/awrudu.png" class="poster">
 
   <!-- TEXT -->
   <div class="text">
@@ -77,10 +116,14 @@ body {
     <p>
       ඔබට සහ ඔබගේ පවුලට  
       සතුට, සෞභාග්‍ය සහ  
-      සම්පූර්ණයෙන්ම සාර්ථක  
-      නව වසරක් වේවා! 🎉
+      සාර්ථක නව වසරක් වේවා! 🎉
     </p>
   </div>
+
+  <!-- EFFECTS -->
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
+  <div class="sparkle"></div>
 
 </div>
 
